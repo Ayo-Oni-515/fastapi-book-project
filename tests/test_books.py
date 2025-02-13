@@ -50,3 +50,7 @@ def test_delete_book():
 
     response = client.get("/books/3")
     assert response.status_code == 404
+
+
+def error()
+    assert 1 == 2
