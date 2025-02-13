@@ -48,6 +48,11 @@ async def get_books() -> OrderedDict[int, Book]:
     return db.get_books()
 
 
+@router.get("/status", status_code=status.HTTP_200_OK)
+async def get_book() -> str:
+    return "Active"
+
+
 #Missing Implementation
 @router.get("/{book_id}", response_model=Book, status_code=status.HTTP_200_OK)
 async def get_book(book_id: int) -> Book:
@@ -60,6 +65,7 @@ async def get_book(book_id: int) -> Book:
         status_code=status.HTTP_200_OK,
         content=db.get_book(book_id).model_dump(),
     )
+
 
 
 @router.put("/{book_id}", response_model=Book, status_code=status.HTTP_200_OK)
