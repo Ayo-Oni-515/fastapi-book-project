@@ -23,13 +23,5 @@ jobs:
           python -m pip install --upgrade pip
           pip install --no-cache-dir -r requirements.txt
 
-      - name: Check Python syntax
-        run: python -m py_compile main.py
-
-      - name: Debug imports
-        run: |
-          python -c "from api.router import api_router"
-          python -c "from core.config import settings"
-
       - name: Test with pytest
         run: pytest --maxfail=1 --disable-warnings -q
