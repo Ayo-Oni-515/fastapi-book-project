@@ -52,5 +52,5 @@ def test_delete_book():
     assert response.status_code == 404
 
 
-def error()
+def error():
     assert 1 == 2
