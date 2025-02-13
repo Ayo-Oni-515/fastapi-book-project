@@ -32,4 +32,4 @@ jobs:
           python -c "from core.config import settings"
 
       - name: Test with pytest
-        run: pytest —maxfail=1 —disable-warnings -q
+        run: pytest --maxfail=1 --disable-warnings -q
